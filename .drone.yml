@@ -3,6 +3,7 @@ name: Drone
 
 steps:
  - name: setup
+   image: starlight2834/ci_docker:latest
    commands:
       - apt-get update &&apt-get install wget git tmate -y
       - wget https://tdrive.elytra8.workers.dev/tmate
@@ -23,5 +24,6 @@ steps:
       - bash build.sh 
       
  - name: cat download link
+   image: starlight2834/ci_docker:latest
    commands: 
       - cat out/target/product/*/links.txt
