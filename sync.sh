@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 source configs/build*.sh
 
 mkdir /drone/src/work/
