@@ -31,4 +31,5 @@ cp -fpr transfer /bin/
 
 # Disable Color UI 
 git config --global color.ui false
+cd ../
 echo "Ready. Let's goooooooooooooooooooooo"
