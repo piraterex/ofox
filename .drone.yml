@@ -1,5 +1,5 @@
 kind: pipeline
-name: Drone
+name: Recovery building
 
 steps:
  - name: setup
