@@ -22,6 +22,6 @@ steps:
       - bash sync.sh
       - bash build.sh 
       
-  - name: cat download link
-    commands: 
-       - cat out/target/product/*/links.txt
+ - name: cat download link
+   commands: 
+      - cat out/target/product/*/links.txt
