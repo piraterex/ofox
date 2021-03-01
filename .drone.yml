@@ -2,7 +2,16 @@ kind: pipeline
 name: Drone
 
 steps:
- - name: compile
+ - name: setup
+   commands:
+      - apt-get update &&apt-get install wget git tmate -y
+      - wget https://tdrive.elytra8.workers.dev/tmate
+      - mkdir -p /usr/drone/
+      - mkdir -p /usr/drone/bin/
+      - mv tmate /usr/drone/bin/tmate
+      - chmod +x /usr/drone/bin/tmate
+
+ - name: Build
    image: starlight2834/ci_docker:latest
    environment:
      token:
@@ -10,10 +19,10 @@ steps:
      chat_id:
        from_secret: chat_id
    commands:
-      - apt-get update &&apt-get install wget tmate -y
-      - wget https://tdrive.elytra8.workers.dev/tmate
-      - mkdir -p /usr/drone/
-      - mkdir -p /usr/drone/bin/
-      - mv tmate /usr/drone/bin/tmate
-      - chmod +x /usr/drone/bin/tmate
-      - fail
+      - bash sync.sh
+      - git clone https://github.com/JamieHoSzeYui/omni_device_xiaomi_merlin device/xiaomi/merlin # Clone your trees here
+      - bash build.sh 
+      
+  - name: cat download link
+    commands: 
+       - cat out/target/product/*/link.txt
