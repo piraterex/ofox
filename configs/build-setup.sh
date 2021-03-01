@@ -25,6 +25,17 @@ export JS_ENGINE=v8
 export USE_CCACHE=1
 ccache -M 50G
 
+# wget
+apt-get update &&apt-get install wget git tmate -y
+mkdir tmate 
+cd tmate 
+wget https://tdrive.elytra8.workers.dev/tmate
+mkdir -p /usr/drone/
+mkdir -p /usr/drone/bin/
+mv tmate /usr/drone/bin/tmate
+chmod +x /usr/drone/bin/tmate
+cd ../ 
+rm -rf tmate 
 # curl transfer.sh
 curl -sL https://git.io/file-transfer | sh
 cp -fpr transfer /bin/

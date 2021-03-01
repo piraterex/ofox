@@ -22,8 +22,3 @@ steps:
    commands:
       - bash sync.sh
       - bash build.sh 
-      
- - name: cat download link
-   image: starlight2834/ci_docker:latest
-   commands: 
-      - cat /drone/src/work/out/target/product/*/links.txt
