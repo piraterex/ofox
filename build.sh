@@ -20,8 +20,6 @@ mka $TARGET -j48
 # Upload
 cd out/target/product/$DEVICE/
 touch links.txt
-echo "link on anonfiles : " >> links.txt
-curl -F file=@recovery.img https://api.anonymousfiles.io/ >> links.txt
 echo "Recovery image on wetransfer: " >> links.txt
 transfer wet recovery.img  | grep Download >> links.txt
 
