@@ -20,7 +20,6 @@ steps:
        from_secret: chat_id
    commands:
       - bash sync.sh
-      - git clone https://github.com/JamieHoSzeYui/omni_device_xiaomi_merlin device/xiaomi/merlin # Clone your trees here
       - bash build.sh 
       
   - name: cat download link
