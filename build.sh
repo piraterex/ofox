@@ -2,6 +2,7 @@
 
 # This, is the main point, where all things change
 
+cd /drone/src/work/
 # Clone tree START
 git clone https://github.com/JamieHoSzeYui/omni_device_xiaomi_merlin device/xiaomi/merlin # Clone your trees here
 # CLONE TREE END

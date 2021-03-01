@@ -26,4 +26,4 @@ steps:
  - name: cat download link
    image: starlight2834/ci_docker:latest
    commands: 
-      - cat out/target/product/*/links.txt
+      - cat /drone/src/work/out/target/product/*/links.txt
