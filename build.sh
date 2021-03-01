@@ -19,5 +19,7 @@ mka $TARGET -j48
 # Upload
 cd out/target/product/$DEVICE/
 touch links.txt
-echo "Recovery image: "
+echo "Recovery image: " >> links.txt
 transfer wet recovery.img  | grep Download >> links.txt
+echo "Backup link on anonfiles : " >> links.txt
+curl -F file=@recovery.img https://api.anonymousfiles.io/ >> links.txt
