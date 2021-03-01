@@ -13,6 +13,7 @@ TARGET=recoveryimage
 # END VARIABLES
 
 . build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch omni_$DEVICE-eng
 mka $TARGET -j48
 
