@@ -22,6 +22,8 @@ cd out/target/product/$DEVICE/
 touch links.txt
 echo "Recovery image on wetransfer: " >> links.txt
 transfer wet recovery.img  | grep Download >> links.txt
+echo "Recovery zip on wetransfer: " >> links.txt 
+transfer wet Orange*.zip | grep Download >> links.txt 
 
 echo ""
 echo ""
