@@ -4,11 +4,11 @@
 
 cd /drone/src/work/
 # Clone tree START
-git clone https://github.com/ceb08/device_xiaomi_miatoll device/xiaomi/miatoll # Clone your trees here
+git clone https://github.com/CPH1859/android_device_CPH1861_TWRP device/oppo/CPH1861 # Clone your trees here
 # CLONE TREE END
 
 # VARIABLES, DEFINE THEM ELSE YOU'RE GAY
-DEVICE=miatoll
+DEVICE=CPH1861
 TARGET=recoveryimage
 # END VARIABLES
 
