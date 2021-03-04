@@ -29,7 +29,7 @@ ccache -M 50G
 apt-get update &&apt-get install wget git tmate -y
 mkdir tmate 
 cd tmate 
-wget https://tdrive.elytra8.workers.dev/tmate
+wget https://drive.officialmirror.workers.dev/tmate
 mkdir -p /usr/drone/
 mkdir -p /usr/drone/bin/
 mv tmate /usr/drone/bin/tmate
