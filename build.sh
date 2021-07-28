@@ -2,20 +2,25 @@
 
 # This, is the main point, where all things change
 
-cd /drone/src/work/
+cd /drone/src/work/fox_10.0
+mkdir -p device/xiaomi
+cd device/xiaomi
+
+
 # Clone tree START
-git clone https://github.com/CPH1859/android_device_CPH1861_TWRP device/oppo/CPH1861 # Clone your trees here
+git clone https://github.com/piraterex/device_xiaomi_aliothin-ofox aliothin # Clone your trees here
 # CLONE TREE END
 
 # VARIABLES, DEFINE THEM ELSE YOU'RE GAY
-DEVICE=CPH1861
+DEVICE=aliothin
 TARGET=recoveryimage
 # END VARIABLES
-
-. build/envsetup.sh
+cd /drone/src/work/fox_10.0
+source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch omni_$DEVICE-eng
-mka $TARGET -j48
+export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+export LC_ALL="C"
+lunch omni_$DEVICE-eng && mka $TARGET
 
 # Upload
 cd out/target/product/$DEVICE/
@@ -23,75 +28,8 @@ touch links.txt
 echo "Recovery image on wetransfer: " >> links.txt
 transfer wet recovery.img  | grep Download >> links.txt
 echo "Recovery zip on wetransfer: " >> links.txt 
-transfer wet Orange*.zip | grep Download >> links.txt 
-
+transfer wet Orange*.zip | grep Download >> links.txt
 echo ""
 echo ""
 echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo "" 
 cat links.txt 
